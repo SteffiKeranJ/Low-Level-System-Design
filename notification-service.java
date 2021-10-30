@@ -3,8 +3,11 @@
 // class to instantiate. Factory Method lets a class defer
 // instantiation to subclasses.
 
+
+// In The Factory Method Pattern , we create object without exposing the creation logic to the client and refer to newly created object using a common interface.
 public class NotificationService {
 
+	// Use the Factory to get object of concrete class by passing an information such as type.
 	public static void main(String[] args) {
 		NotificationFactory notificationFactory = new NotificationFactory();
 		Notification notification = notificationFactory.createNotification("sms");
@@ -12,6 +15,7 @@ public class NotificationService {
 	}
 }
 
+// Create a Factory to generate object of concrete class based on given information.
 
 public class NotificationFactory {
 	public class Notification createNotification(String type) {
@@ -30,10 +34,13 @@ public class NotificationFactory {
 	} 
 }
 
+// Create an interface
 public interface Notification {
 	void notifyUser();
 }
-       
+
+		   
+// Create concrete classes implementing the Notification interface.
 
 public class SMSNotification implements Notification {
 	@Override
