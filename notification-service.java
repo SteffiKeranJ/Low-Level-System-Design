@@ -1,3 +1,18 @@
+//  The Factory Method Pattern defi nes an interface
+// for creating an object, but lets subclasses decide which
+// class to instantiate. Factory Method lets a class defer
+// instantiation to subclasses.
+
+public class NotificationService {
+
+	public static void main(String[] args) {
+		NotificationFactory notificationFactory = new NotificationFactory();
+		Notification notification = notificationFactory.createNotification("sms");
+		notification.notifyUser();
+	}
+}
+
+
 public class NotificationFactory {
 	public class Notification createNotification(String type) {
 		if(type == null || type.isEmpty() {
@@ -12,21 +27,8 @@ public class NotificationFactory {
 				return new EmailNotification();
 		}
 		return null;
-	
 	} 
-
 }
-
-public class NotificationService {
-
-	public static void main(String[] args) {
-		NotificationFactory notificationFactory = new NotificationFactory();
-		Notification notification = notificationFactory.createNotification("sms");
-		notification.notifyUser();
-	}
-
-}
-
 
 public interface Notification {
 	void notifyUser();
