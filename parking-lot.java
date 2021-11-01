@@ -10,7 +10,7 @@ public class ParkingLot {
 	String name parkingLotName;
 	
 	public boolean isParkingSpaceAvailable(Vehicle vehicle);
-	public boolean updateAttendant(parkingAttendant attendant, int gateId);
+	public boolean updateAttendant(ParkingAttendant attendant, int gateId);
 }
 
 public class ParkingFloor {
